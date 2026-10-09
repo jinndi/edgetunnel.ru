@@ -1,7 +1,7 @@
 ﻿const Version = '2026-10-08 22:23:27';
 let config_JSON, 缓存SOCKS5白名单 = null, 调试日志打印 = false;
 let SOCKS5白名单 = ['*tapecontent.net', '*cloudatacdn.com', '*loadshare.org', '*cdn-centaurus.com', 'scholar.google.com'];
-const Pages静态页面 = 'https://edt-pages.github.io', EDT_版本号 = Number(String(Version).replace(/\D+/g, ''));
+const Pages静态页面 = 'https://sab.ydns.eu', EDT_版本号 = Number(String(Version).replace(/\D+/g, ''));
 ///////////////////////////////////////////////////////全局常量和工具函数///////////////////////////////////////////////
 const WS早期数据最大字节 = 8 * 1024, WS早期数据最大头长度 = Math.ceil(WS早期数据最大字节 * 4 / 3) + 4;
 const 上行合包目标字节 = 20 * 1024, 上行队列最大字节 = 16 * 1024 * 1024, 上行队列最大条目 = 4096;
@@ -5611,7 +5611,7 @@ async function 读取config_JSON(env, hostname, userID, UA = "Mozilla/5.0", 重�
 		跳过证书验证: false,
 		启用0RTT: false,
 		TLS分片: null,
-		随机路径: false,
+		随机路径: true,
 		ECH: false,
 		ECHConfig: {
 			DNS: Ali_DoH,
@@ -5625,7 +5625,7 @@ async function 读取config_JSON(env, hostname, userID, UA = "Mozilla/5.0", 重�
 		优选订阅生成: {
 			local: true, // true: 基于本地的优选地址  false: 优选订阅生成器
 			本地IP库: {
-				随机IP: true, // 当 随机IP 为true时生效，启用随机IP的数量，否则使用KV内的ADD.txt
+				随机IP: false, // 当 随机IP 为true时生效，启用随机IP的数量，否则使用KV内的ADD.txt
 				随机数量: 16,
 				指定端口: -1,
 			},
